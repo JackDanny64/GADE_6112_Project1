@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_Project1
 {
-    internal class EmptyTile
+    internal class EmptyTile : Tile
     {
+        public EmptyTile(int x, int y) : base(x, y)
+        {
+        }
     }
 }
