@@ -9,12 +9,35 @@ namespace GADE_6112_Project1
     abstract class Character : Tile
     {
         protected int hp;
-
-        protected Character(int x, int y) : base(x, y)
+        public int Healthpoints
         {
+            get { return hp; }
+        }
+        protected int maxhp;
+
+        public int Maxhp
+        {
+            get { return maxhp; }
+        }
+        protected int damage;
+        public int Damage
+        {
+            get { return damage; } 
         }
 
-        protected int 
+        Tile[] arrayTiles = new Tile[4];
+       protected Character(int x, int y) : base(x, y)
+        {
 
+        }
+        public enum Movement
+        {
+            noMovement,
+            Up,
+            Down,
+            Left,
+            Right
+        }
+        
     }
 }
