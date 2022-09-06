@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_Project1
 {
-    internal class Obstacle
+    internal class Obstacle : Tile
     {
     }
 }
