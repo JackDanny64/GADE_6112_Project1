@@ -14,6 +14,7 @@ namespace GADE_6112_Project1
         public Tile(int x, int y)
         {
             this.x = x;
+            this.y = y;
         }
 
         public int X { get; set; }
