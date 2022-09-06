@@ -16,8 +16,18 @@ namespace GADE_6112_Project1
             this.x = x;
             this.y = y;
         }
-
+        public enum Tiletype
+        {
+            Hero,
+            Enemy,
+            Gold,
+            Weapon,
+        }
         public int X { get; set; }
         public int Y { get; set; }
+
+
+        
+       
     }
 }
