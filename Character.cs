@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_Project1
 {
-    abstract class Character
+    abstract class Character : Tile
     {
+        protected int hp;
+
+        protected Character(int x, int y) : base(x, y)
+        {
+        }
+
+        protected int 
     }
 }
