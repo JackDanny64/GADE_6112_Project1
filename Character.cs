@@ -38,6 +38,27 @@ namespace GADE_6112_Project1
             Left,
             Right
         }
-        
+        public virtual void Attack(Character target)
+        {
+
+        }
+
+        public bool isDead()
+        {
+            return (hp <= 0);
+
+        }
+        public virtual bool CheckRange(Character target)
+        {
+
+        }
+
+        private int DistanceTo(Character target)
+        {
+            double distance = (Character - target).Length;
+        }
+
+
+
     }
 }
