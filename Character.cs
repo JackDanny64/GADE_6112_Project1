@@ -26,10 +26,15 @@ namespace GADE_6112_Project1
         }
 
         Tile[] arrayTiles = new Tile[4];
-       protected Character(int x, int y) : base(x, y)
+        protected Character(int x, int y) : base(x, y)
         {
+            
+            
+
+
 
         }
+        
         public enum Movement
         {
             noMovement,
