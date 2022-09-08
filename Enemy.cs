@@ -11,7 +11,12 @@ namespace GADE_6112_Project1
         Random random = new Random();
         protected Enemy(int x, int y) : base(x, y)
         {
+            x = random.Next(x);
+            y = random.Next(y);
         }
+        public static int EnemysDamage { get; }
+        public static int StartingHp { get; }
+
         public int MaxHp = 10;
         public int damage = 10;
         
@@ -19,7 +24,7 @@ namespace GADE_6112_Project1
         {
            EnemysDamage= 10;
             StartingHp= 10;
-            MaxHp= 10;
+         
         }
 
     }
