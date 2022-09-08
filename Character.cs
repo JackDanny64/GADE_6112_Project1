@@ -31,10 +31,6 @@ namespace GADE_6112_Project1
         protected Character(int x, int y) : base(x, y)
         {
             
-            
-
-
-
         }
         
         public enum Movement
@@ -47,7 +43,9 @@ namespace GADE_6112_Project1
         }
         public virtual void Attack(Character target)
         {
+            if (DistanceTo(target) < 1) return;
 
+            target.hp -= this.damage;
         }
 
         public bool isDead()
@@ -62,8 +60,7 @@ namespace GADE_6112_Project1
 
         private int DistanceTo(Character target)
         {
-           
-            double distance = (Character - target).Length;
+           return Math.Abs(this.X - target.X) + Math.Abs(this.Y - target.Y) ;
         }
 
         public void Move(Movement move)
