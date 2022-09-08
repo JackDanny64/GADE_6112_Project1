@@ -23,11 +23,23 @@ namespace GADE_6112_Project1
 
         public class Enemy { public float MaximumHealth, CurrentHealth; }
 
-        public Enemy[] enemy = new Enemy[]
+        public Enemy[] enemies = new Enemy[]
         {
            
 
         };
+
+        double MapWidth;
+        double MapHeight;
+        int random_num = new Random().Next(1, 10);
+
+        public Map(double H, double W)
+        {
+            MapWidth = W;
+            MapHeight = H;
+
+        }
+
 
     }
 }

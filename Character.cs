@@ -26,6 +26,8 @@ namespace GADE_6112_Project1
         }
 
         Tile[] arrayTiles = new Tile[4];
+        private int end1;
+
         protected Character(int x, int y) : base(x, y)
         {
             
@@ -60,7 +62,28 @@ namespace GADE_6112_Project1
 
         private int DistanceTo(Character target)
         {
+           
             double distance = (Character - target).Length;
+        }
+
+        public void Move(Movement move)
+        {
+            
+
+            switch(move)
+            {
+                case Movement.Up.cout <<"Up" << end1
+                    break;
+                case Movement.Down.cout << "Down" << end1
+                    break;
+                case Movement.Left.cout << "Left" << end1
+                    break;
+                case Movement.Right.cout << "Right" << end1
+                    break;
+                case Movement.noMovement.cout << "noMovement" << end1
+                    break;
+
+            }
         }
 
 
