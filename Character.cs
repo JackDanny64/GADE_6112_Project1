@@ -22,7 +22,7 @@ namespace GADE_6112_Project1
         protected int damage;
         public int Damage
         {
-            get { return damage; } 
+            get { return damage; }
         }
 
         Tile[] arrayTiles = new Tile[4];
@@ -30,9 +30,9 @@ namespace GADE_6112_Project1
 
         protected Character(int x, int y) : base(x, y)
         {
-            
+
         }
-        
+
         public enum Movement
         {
             noMovement,
@@ -57,37 +57,43 @@ namespace GADE_6112_Project1
         {
             if (DistanceTo(target) <= 1) ;
 
-            return true;    
+            return true;
 
         }
 
         private int DistanceTo(Character target)
         {
-           return Math.Abs(this.X - target.X) + Math.Abs(this.Y - target.Y) ;
+            return Math.Abs(this.X - target.X) + Math.Abs(this.Y - target.Y);
         }
 
         public void Move(Movement move)
         {
-            
 
-            switch(move)
+
+            switch (move)
             {
-                case Movement.Up: 
+                case Movement.Up:
                     Y += 1;
                     break;
-                case Movement.Down: 
+                case Movement.Down:
                     Y -= 1;
                     break;
-                case Movement.Left: 
+                case Movement.Left:
                     X -= 1;
                     break;
-                case Movement.Right: 
+                case Movement.Right:
                     X += 1;
                     break;
                 case Movement.noMovement:
                     break;
 
             }
+        }
+
+        public abstract Movement ReturnMove(Movement move = 0)
+        {
+            Movement movement = Movement.ReturnMove(move);
+
         }
         
         
