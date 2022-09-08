@@ -55,9 +55,16 @@ namespace GADE_6112_Project1
         }
         public virtual bool CheckRange(Character target)
         {
-            if (DistanceTo(target) <= 1) ;
+            if (DistanceTo(target) <= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
-            return true;
+            
 
         }
 
@@ -91,13 +98,12 @@ namespace GADE_6112_Project1
         }
 
         public abstract Movement ReturnMove(Movement move = 0);
-        public abstract override string ToString();
+        
+            
 
-
-
-
-
-
+        
+        
+        
 
 
     }
