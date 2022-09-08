@@ -55,7 +55,10 @@ namespace GADE_6112_Project1
         }
         public virtual bool CheckRange(Character target)
         {
-            //coment
+            if (DistanceTo(target) <= 1) ;
+
+            return true;    
+
         }
 
         private int DistanceTo(Character target)
@@ -86,7 +89,8 @@ namespace GADE_6112_Project1
 
             }
         }
-
+        
+        
 
 
     }
