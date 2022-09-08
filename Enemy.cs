@@ -12,9 +12,9 @@ namespace GADE_6112_Project1
         protected Enemy(int x, int y) : base(x, y)
         {
         }
-        private static int EnemysDamage;
-        private static int StartingHp;
-        private static int MaxHp;
+        public int MaxHp = 10;
+        public int damage = 10;
+        
         static Enemy()
         {
            EnemysDamage= 10;
