@@ -72,15 +72,19 @@ namespace GADE_6112_Project1
 
             switch(move)
             {
-                case Movement.Up.cout <<"Up" << end1
+                case Movement.Up: 
+                    Y += 1;
                     break;
-                case Movement.Down.cout << "Down" << end1
+                case Movement.Down: 
+                    Y -= 1;
                     break;
-                case Movement.Left.cout << "Left" << end1
+                case Movement.Left: 
+                    X -= 1;
                     break;
-                case Movement.Right.cout << "Right" << end1
+                case Movement.Right: 
+                    X += 1;
                     break;
-                case Movement.noMovement.cout << "noMovement" << end1
+                case Movement.noMovement:
                     break;
 
             }
