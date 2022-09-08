@@ -90,13 +90,14 @@ namespace GADE_6112_Project1
             }
         }
 
-        public abstract Movement ReturnMove(Movement move = 0)
-        {
-            Movement movement = Movement.ReturnMove(move);
+        public abstract Movement ReturnMove(Movement move = 0);
+        public abstract override string ToString();
 
-        }
-        
-        
+
+
+
+
+
 
 
     }
