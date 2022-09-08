@@ -55,7 +55,7 @@ namespace GADE_6112_Project1
         }
         public virtual bool CheckRange(Character target)
         {
-
+            //coment
         }
 
         private int DistanceTo(Character target)
