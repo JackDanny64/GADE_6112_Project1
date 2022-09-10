@@ -25,9 +25,8 @@ namespace GADE_6112_Project1
             get { return damage; }
         }
 
-        Tile[] arrayTiles = new Tile[4];
-        private int end1;
-
+        public Tiletype[] ArrayTiles = new Tiletype[4];
+        
         protected Character(int x, int y) : base(x, y)
         {
 
