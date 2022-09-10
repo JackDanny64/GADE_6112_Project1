@@ -8,7 +8,7 @@ namespace GADE_6112_Project1
 {
     abstract class Swamp_Creature : Enemy
     {
-        public Swamp_Creature(int x, int y, int Hp, int MaxHp, int damage) :base(x, y, Hp, MaxHp, damage)
+        public Swamp_Creature(int x, int y, int Hp, int MaxHp, int damage) : base(x, y, Hp, MaxHp, damage)
         {
             Hp = 10;
             damage = 1;
