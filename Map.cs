@@ -9,10 +9,10 @@ namespace GADE_6112_Project1
     internal class Map
     {
         public Tile[,] MapLayout;
-        public Hero hero;
-        public Enemy[] enemies;
-        public int mapHeight, mapWidth;
-        public Random rnd = new Random();
+        public Hero hero;   //A Hero object to represent the player character
+        public Enemy[] enemies;    //An Enemy array for the enemies
+        public int mapHeight, mapWidth;   //Variables for storing the map’s width and height
+        public Random rnd = new Random();   // A Random object for randomising numbers.
 
         public Map(int minWidth, int maxWidth, int minHeight, int maxHeight, int enemyCount)
         {
@@ -41,14 +41,15 @@ namespace GADE_6112_Project1
                         MapLayout[i, j].Type = Tile.Tiletype.EmptyTile;
                     }
                 }
+
                 enemies = new Enemy[enemyCount];
+
                 Create(Tile.Tiletype.Hero);
-                for (int i = 0; i < enemyCount; i++)
+
+                for (int j = 0; j < enemyCount; j++)
                 {
                     Create(Tile.Tiletype.Enemy);
                 }
-
-
             }
         }
         public Tile[,] Map_player { get => MapLayout; }
@@ -56,17 +57,19 @@ namespace GADE_6112_Project1
         public Enemy[] Enemies_player { get => enemies; }
         public int MapWidth_player { get => mapWidth; }
         public int MapHeight_player { get => mapHeight; }
+
+        // Updates the vision for each player
         public void UpdateVision()
         {
-            //Hero vision
+            //Hero 
             Tile.Tiletype[] vision = new Tile.Tiletype[4];
             vision[0] = MapLayout[hero.X, hero.Y + 1].Type; //up
             vision[1] = MapLayout[hero.X, hero.Y - 1].Type; //down
             vision[2] = MapLayout[hero.X - 1, hero.Y].Type; //left
             vision[3] = MapLayout[hero.X + 1, hero.Y].Type; //right
-            hero.ArrayTiles = vision;
+            hero.VisionTiles = vision;
 
-            //Enemies Vision
+            //Enemies
             for (int i = 0; i < enemies.Length; i++)
             {
                 Tile.Tiletype[] enemyVision = new Tile.Tiletype[4];
@@ -74,7 +77,8 @@ namespace GADE_6112_Project1
                 enemyVision[1] = MapLayout[enemies[i].X, enemies[i].Y - 1].Type; //down
                 enemyVision[2] = MapLayout[enemies[i].X - 1, enemies[i].Y].Type; //left
                 enemyVision[3] = MapLayout[enemies[i].X + 1, enemies[i].Y].Type; //right
-                enemyVision[i].Arraytiles = enemyVision;
+                enemies[i].VisionTiles = enemyVision;
+
             }
         }
 
@@ -106,17 +110,9 @@ namespace GADE_6112_Project1
         }
 
 
-
-
-
-
-
-
-
-
     }
 
 
 
 }
-}
+

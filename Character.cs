@@ -8,51 +8,44 @@ namespace GADE_6112_Project1
 {
     abstract class Character : Tile
     {
-        protected int hp;
-        public int Healthpoints
-        {
-            get { return hp; }
-        }
-        protected int maxhp;
 
-        public int Maxhp
-        {
-            get { return maxhp; }
-        }
-        protected int damage;
-        public int Damage
-        {
-            get { return damage; }
-        }
+        protected int hp; // Health points 
+        protected int maxhp; // Max Health
+        protected int damage; // Attack damage
+        protected Tiletype[] visionTiles = new Tiletype[4]; // Vision array
 
-        public Tiletype[] ArrayTiles = new Tiletype[4];
-        
-        protected Character(int x, int y) : base(x, y)
-        {
-
-        }
-
-        public enum Movement
+        public enum Movement  // Movement Enum for character
         {
             noMovement,
             Up,
             Down,
             Left,
-            Right
+            Right,
+            NoMovement
         }
-        public virtual void Attack(Character target)
+        public Character(int x, int y, int hp, int maxHp, int damage) : base(x, y) //Accessor
+        {
+            this.hp = hp;
+            this.maxhp = maxHp;
+            this.damage = damage;
+        }
+
+        public Tiletype[] VisionTiles { get => VisionTiles; set => VisionTiles = value; }
+
+
+        public virtual void Attack(Character target) //Attack method to decrease Hp
         {
             if (DistanceTo(target) < 1) return;
 
             target.hp -= this.damage;
         }
 
-        public bool isDead()
+        public bool isDead() // Checks if a character is dead 
         {
             return (hp <= 0);
 
         }
-        public virtual bool CheckRange(Character target)
+        public virtual bool CheckRange(Character target) // Checks fot the range 
         {
             if (DistanceTo(target) <= 1)
             {
@@ -62,20 +55,15 @@ namespace GADE_6112_Project1
             {
                 return false;
             }
-
-            
-
         }
 
-        private int DistanceTo(Character target)
+        private int DistanceTo(Character target)// Checks for the distance of the enemy from a character
         {
             return Math.Abs(this.X - target.X) + Math.Abs(this.Y - target.Y);
         }
 
-        public void Move(Movement move)
+        public void Move(Movement move) // changes the movement of a character
         {
-
-
             switch (move)
             {
                 case Movement.Up:
@@ -92,13 +80,11 @@ namespace GADE_6112_Project1
                     break;
                 case Movement.noMovement:
                     break;
-
             }
         }
 
-        public abstract Movement ReturnMove(Movement move = 0);
+        public abstract Movement ReturnMove(Movement move = 0); // returns the direction 
         public abstract override string ToString();
-
 
 
 

@@ -8,16 +8,14 @@ namespace GADE_6112_Project1
 {
     abstract class Enemy : Character
     {
-        Random random = new Random();
-        protected Enemy(int x, int y, int Hp, int MaxHp, int Damage, char Symbol) : base(x, y, MaxHp, Damage) 
-        {
+        protected Random random = new Random();
 
-        }
-        
-        public override string ToString()
+        public Enemy(int x, int y, int hp, int maxHp, int damage) : base(x, y, hp, maxHp, damage)
         {
-            return $" Enemy at [{X}:{Y}] ({Damage})";
         }
-
-    }
+        public override string ToString() //Output string for enemy
+        {
+            return "Enemy at [{x},{y}] with damage of ({Damage})";
+        }
+    }  
 }

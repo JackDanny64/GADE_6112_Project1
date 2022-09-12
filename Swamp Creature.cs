@@ -6,28 +6,29 @@ using System.Threading.Tasks;
 
 namespace GADE_6112_Project1
 {
-    abstract class Swamp_Creature : Enemy
-    {
-        public Swamp_Creature(int x, int y, int Hp, int MaxHp, int damage) : base(x, y, Hp, MaxHp, damage)
+    internal class Swamp_Creature : Enemy
+    {   // Sets the swamp creatures hp to 10 and damage to 1
+        public Swamp_Creature(int x, int y, int hp, int MaxHp, int damage) : base(x, y, hp, MaxHp, damage)
         {
-            Hp = 10;
+            hp = 10;
             damage = 1;
 
         }
-        public override Movement ReturnMove()
+        // Creates random movement for the swamp creature and then checks for the an empty space to move
+        public override Movement ReturnMove(Movement movement = Movement.NoMovement)
         {
             Random RndDirection = new Random();
             int RandomMove = RndDirection.Next(0, 4);
-            bool loop = false;
+            bool drloop = false;
             do
             {
 
-                if (ArrayTiles[RandomMove] != Tiletype.EmptyTile)
+                if (VisionTiles[RandomMove] != Tile.Tiletype.EmptyTile)
                 {
-                    loop = true;
+                    drloop = true;
                 }
-            } while (loop);
-            switch (RandomMove)
+            } while (drloop);
+            switch (RandomMove) // Switch used to determine the direction 
             {
                 case 0:
                     return Movement.Up;
@@ -37,17 +38,12 @@ namespace GADE_6112_Project1
                     return Movement.Left;
                 case 3:
                     return Movement.Right;
-                case 4:
+                default:
                     return Movement.noMovement;
+
             }
-
-
-
-
-
-
 
         }
     }
-    
+
 }
